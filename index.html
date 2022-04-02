@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <script type="text/javascript" src="./Native/unity-webgl-tools.js"></script>
+    <script type="text/javascript" src="./Native/microphone.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Goal</title>
+    <script src="./polyfills.js"></script>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" style="width: 786px; height: 393px; background: #231F20"></canvas>
+    <script src="Build/goal_build_24.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/goal_build_24.data",
+        frameworkUrl: "Build/goal_build_24.framework.js",
+        codeUrl: "Build/goal_build_24.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Reflect",
+        productName: "Goal",
+        productVersion: "1.0",
+      })
+      .then((instance) =>
+      {
+        unityInstance = instance;
+      })
+      .catch((message) => { console.warn(message); });
+    </script>
+  </body>
+</html>
